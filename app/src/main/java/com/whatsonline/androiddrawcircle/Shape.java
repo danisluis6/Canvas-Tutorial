@@ -1,24 +1,43 @@
 package com.whatsonline.androiddrawcircle;
 
+import android.app.Activity;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.widget.ImageView;
 
+/**
+ * @Question: How do android screen coordinates work?
+ * @Run: https://stackoverflow.com/questions/11483345/how-do-android-screen-coordinates-work
+ * Implement
+ *
+ * @
+ */
 
 public class Shape {
 
     private Bitmap bmp;
     private ImageView img;
+    private Activity mActivity;
+    private Context mContext;
+    private  int screenWidth;
+    private int screenHeight;
 
-    public Shape(Bitmap bmp, ImageView img) {
-
+    public Shape(Context mContext, MainActivity mActivity, Bitmap bmp, ImageView img, int width,
+        int height) {
+        this.mContext = mContext;
+        this.mActivity = mActivity;
         this.bmp = bmp;
         this.img = img;
+        screenWidth = width;
+        screenHeight = height;
         onDraw();
     }
 
@@ -63,14 +82,20 @@ public class Shape {
         canvas.drawARGB(0, 0, 0, 0);
 
         // Step 5: Create Paint
-        final Paint paint = new Paint();
-        paint.setAntiAlias(true);
-        paint.setFilterBitmap(true);
-        paint.setDither(true);
+        Paint paint = new Paint();
+        Point point1_draw = new Point(75, 0);
+        Point point2_draw = new Point(0, 180);
+        Point point3_draw = new Point(180, 180);
+        Path path = new Path();
+        path.moveTo(point1_draw.x, point1_draw.y);
+        path.lineTo(point2_draw.x, point2_draw.y);
+        path.lineTo(point3_draw.x, point3_draw.y);
+        path.lineTo(point1_draw.x, point1_draw.y);
+        path.close();
         paint.setColor(Color.parseColor("#BAB399"));
 
-        // Step 6: => Expected: Circle => available function drawCircle() => Apply no need to custom
-        canvas.drawCircle(finalBitmap.getWidth() / 2 + 0.7f, finalBitmap.getHeight() / 2 + 0.7f, finalBitmap.getWidth() / 2 + 0.1f, paint);
+        // Step 6: => Expected: => drawPath()
+        canvas.drawPath(path, paint);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
 
         // Step 7:
