@@ -6,12 +6,16 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 public class MainActivity extends Activity {
 
-  private ImageView img;
+
+  private LinearLayout topHeader;
+  private ImageView imvHeader;
   private Context mContext;
 
   @Override
@@ -19,7 +23,8 @@ public class MainActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    img = (ImageView) findViewById(R.id.img);
+    topHeader = (LinearLayout) findViewById(R.id.llTopHeader);
+    imvHeader = (ImageView) findViewById(R.id.imvHeader);
 
     Display display = getWindowManager().getDefaultDisplay();
     Point size = new Point();
@@ -27,8 +32,10 @@ public class MainActivity extends Activity {
     int width = size.x;
     int height = size.y;
 
-    Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.img);
+    Log.i("TAG", "Height layout: "+topHeader.getHeight());
+    Log.i("TAG", "Height layout: "+imvHeader.getHeight());
 
-    new Shape(getApplicationContext(),this, icon, img, width, height);
+    Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.talking);
+    new Shape(getApplicationContext(),this, icon, imvHeader, width, 600);
   }
 }
