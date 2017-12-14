@@ -25,10 +25,10 @@ public class Shape {
 
     private Bitmap bmp;
     private ImageView img;
-    private Activity mActivity;
-    private Context mContext;
-    private  int screenWidth;
-    private int screenHeight;
+    private static Activity mActivity;
+    private static Context mContext;
+    private  static int screenWidth;
+    private static int screenHeight;
 
     public Shape(Context mContext, MainActivity mActivity, Bitmap bmp, ImageView img, int width,
         int height) {
@@ -82,15 +82,20 @@ public class Shape {
         canvas.drawARGB(0, 0, 0, 0);
 
         // Step 5: Create Paint
+        /*
+         * Analysis: How many point do you need to specify before drawing?
+         *
+         */
         Paint paint = new Paint();
-        Point point1_draw = new Point(75, 0);
-        Point point2_draw = new Point(0, 180);
-        Point point3_draw = new Point(180, 180);
+        Point point1 = new Point(0,0);
+        Point point2 = new Point(screenWidth, 0);
+        Point point3 = new Point(0, screenHeight);
+
         Path path = new Path();
-        path.moveTo(point1_draw.x, point1_draw.y);
-        path.lineTo(point2_draw.x, point2_draw.y);
-        path.lineTo(point3_draw.x, point3_draw.y);
-        path.lineTo(point1_draw.x, point1_draw.y);
+        path.moveTo(point1.x, point1.y);
+        path.lineTo(point2.x, point2.y);
+        path.lineTo(point3.x, point3.y);
+        path.lineTo(point1.x, point1.y);
         path.close();
         paint.setColor(Color.parseColor("#BAB399"));
 
