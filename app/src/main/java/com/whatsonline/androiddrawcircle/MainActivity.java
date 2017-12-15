@@ -61,13 +61,13 @@ public class MainActivity extends Activity {
     });
 
 
-//    final ViewTreeObserver observer2 = layer2.getViewTreeObserver();
-//    observer2.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
-//      @Override
-//      public void onGlobalLayout() {
-//        new Layer1(mContext, MainActivity.this, icon2, imv1, layer2.getWidth(), layer2.getHeight());
-//      }
-//    });
+    final ViewTreeObserver observer2 = layer2.getViewTreeObserver();
+    observer2.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
+      @Override
+      public void onGlobalLayout() {
+        new Layer2(mContext, MainActivity.this, icon2, imv1, layer2.getWidth(), layer2.getHeight());
+      }
+    });
 
   }
 }
