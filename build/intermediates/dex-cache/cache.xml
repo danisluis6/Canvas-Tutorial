@@ -21,12 +21,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/lorence/Android/Sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/home/lorence/Desktop/Canvas-Tutorial/app/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.2_53e1827bbc8911a309fa9ebab20510544ae0f493.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/lorence/.android/build-cache/7af58af8d7bde49927d9a66344880b01c452d73e/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
         <dex dex="/home/lorence/Desktop/Canvas-Tutorial/app/build/intermediates/pre-dexed/debug/classes_378d1f0f2c716a3181d76a6e22d3b97888a9ee42.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/lorence/.android/build-cache/a4719027ded5c7662076ab8a4d9d0665fa5ea3e3/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/home/lorence/Desktop/Canvas-Tutorial/app/build/intermediates/pre-dexed/debug/classes_2d15c86ae489f619742d436f0577b205723e2920.jar" />
     </item>
     <item
         is-multidex="false"

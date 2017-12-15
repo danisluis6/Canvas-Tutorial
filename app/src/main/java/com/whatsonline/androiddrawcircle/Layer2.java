@@ -21,7 +21,7 @@ import android.widget.ImageView;
  * @
  */
 
-public class Shape {
+public class Layer2 {
 
   private static Activity mActivity;
   private static Context mContext;
@@ -30,7 +30,7 @@ public class Shape {
   private Bitmap bmp;
   private ImageView img;
 
-  public Shape(Context mContext, MainActivity mActivity, Bitmap bmp, ImageView img, int width,
+  public Layer2(Context mContext, MainActivity mActivity, Bitmap bmp, ImageView img, int width,
       int height) {
     this.mContext = mContext;
     this.mActivity = mActivity;
@@ -71,13 +71,10 @@ public class Shape {
          * Analysis: How many point do you need to specify before drawing?
          *
          */
-    Log.i("TAG", screenWidth + "");
-    Log.i("TAG", screenHeight + "");
-
     Paint paint = new Paint();
-    Point point1 = new Point(0, 0);
+    Point point1 = new Point(0, screenHeight);
     Point point2 = new Point(screenWidth, 0);
-    Point point3 = new Point(0, screenHeight);
+    Point point3 = new Point(screenWidth, screenHeight);
 
     Path path = new Path();
     path.moveTo(point1.x, point1.y);
