@@ -42,8 +42,8 @@ public class MainActivity extends Activity {
     int width = size.x;
     int height = size.y;
 
-    final Bitmap icon1 = BitmapFactory.decodeResource(getResources(), R.drawable.talking);
-    final Bitmap icon2 = BitmapFactory.decodeResource(getResources(), R.drawable.img);
+    final Bitmap icon1 = BitmapFactory.decodeResource(getResources(), R.drawable.aaa);
+    final Bitmap icon2 = BitmapFactory.decodeResource(getResources(), R.drawable.bbb);
 
     final ViewTreeObserver observer1 = layer1.getViewTreeObserver();
     observer1.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {

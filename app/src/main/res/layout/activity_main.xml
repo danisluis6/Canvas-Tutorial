@@ -8,9 +8,8 @@
 
   <LinearLayout
     android:id="@+id/layer1"
-    android:layout_width="0dp"
+    android:layout_width="match_parent"
     android:layout_height="300dp"
-    android:elevation="1dp"
     android:orientation="horizontal"
 
     app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +26,7 @@
 
   <LinearLayout
     android:id="@+id/layer2"
-    android:layout_width="368dp"
+    android:layout_width="match_parent"
     android:layout_height="300dp"
     android:orientation="horizontal"
     android:elevation="2dp"
