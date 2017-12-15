@@ -45,8 +45,22 @@ public class MainActivity extends Activity {
     final Bitmap icon1 = BitmapFactory.decodeResource(getResources(), R.drawable.talking);
     final Bitmap icon2 = BitmapFactory.decodeResource(getResources(), R.drawable.img);
 
-    new Layer1(mContext, MainActivity.this, icon1, imv1, width, 400);
-    new Layer2(mContext, MainActivity.this, icon2, imv2, width, 400);
+    final ViewTreeObserver observer1 = layer1.getViewTreeObserver();
+    observer1.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
+      @Override
+      public void onGlobalLayout() {
+        new Layer1(mContext, MainActivity.this, icon1, imv1, layer1.getWidth(), layer1.getHeight());
+      }
+    });
+
+
+    final ViewTreeObserver observer2 = layer2.getViewTreeObserver();
+    observer2.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
+      @Override
+      public void onGlobalLayout() {
+        new Layer2(mContext, MainActivity.this, icon2, imv2, layer2.getWidth(), layer2.getHeight());
+      }
+    });
 
   }
 }
